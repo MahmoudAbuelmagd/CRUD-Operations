@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="bg-light">
+    <h1 class="mt-4 mb-3 text-black-50 fw-bold text-center"> Products Store Management </h1>
+    <div class="container bg-white p-3  mb-3 shadow-sm w-50">
+      <div class="form-floating mb-3">
+        <input type="text" class="input form-control" id="prodName" placeholder="product name">
+        <div class="alert alert-danger p-2 mt-1 d-none" role="alert">
+          Your product name must include at least four chars
+        </div>
+        <label for="prodName">product name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class=" input form-control" id="prodPrice" placeholder="product price">
+        <div class="alert alert-danger p-2 mt-1 d-none" role="alert">
+          Price should at least 2 Numbers
+        </div>
+          <label for="prodPrice">product price</label>
+        </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="input form-control" id="prodDes" placeholder="product description">
+        <div class="alert alert-danger p-2 mt-1 d-none" role="alert">
+          Describe the product in one word or more!
+        </div>
+        <label for="prodDes">product description</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input list="category" type="text" class="input form-control" id="prodCat" placeholder="product category">
+        <div class="alert alert-danger p-2 mt-1 d-none" role="alert">
+          please choose from (tv|mobile|laptop|camera)
+        </div>
+        <label for="prodCat">product category </label>
+      </div>
+        <datalist id="category">
+          <option value="tv">
+          <option value="mobile">
+          <option value="laptop">
+          <option value="camera">
+        </datalist>
+      <div class="form-floating mb-3">
+        <input type="file" class="form-control" id="prodImage" accept="image/*" >
+        <label for="prodImage">product image</label>
+      </div>
+      <button onclick="addProduct()" class="btn btn-primary py-3" id="addBtn"> ADD PRODUCT</button>
+      <button  onclick="updateProduct()" class="btn btn-warning py-3 d-none" id="updateBtn"> UPDATE PRODUCT</button>
+      <input type="text" oninput="searchProduct()" class="form-control mx-auto mt-4" id="productSearch" placeholder="Enter Name of Any Product">
+    </div>
+    <div class="container">
+      <div class="row gy-4" id="demo">
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
